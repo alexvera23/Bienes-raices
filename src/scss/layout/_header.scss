@@ -1,0 +1,52 @@
+
+.header {
+    background-color: $grisOscuro;
+    padding: 20px 0;
+
+    // ✅ INICIO: Todo lo que esté aquí dentro SOLO se aplica
+    // cuando el header tenga la clase ".inicio"
+    &.inicio { 
+        background-size: cover;
+        background-position: center;
+        
+        @include tablet {
+            min-height: 60rem;
+        }
+
+        // 1. MOVIMOS LAS IMÁGENES AQUÍ DENTRO
+        // Esto se compila como: .no-webp .header.inicio
+        .no-webp & {
+            background-image: url('../../img/header.jpg');
+        }
+        // Esto se compila como: .webp .header.inicio
+        .webp & {
+            background-image: url('../../img/header.webp');
+        }
+    }
+    // FIN: Reglas de .inicio
+
+    
+    .contenido-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        // 2. ESTE ES EL ARREGLO PRINCIPAL:
+        // Anidamos la altura del contenido DENTRO de la regla de .inicio
+        // Esto se compila como: .header.inicio .contenido-header
+        .header.inicio & {
+            @include tablet {
+                min-height: 60rem;
+            }
+        }
+
+        h1 {
+            text-align: left;
+            color: white;
+            font-weight: $bold;
+            line-height: 2;
+            max-width: 600px;
+        }
+    }
+}
+

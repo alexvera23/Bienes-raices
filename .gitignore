@@ -1,0 +1,13 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Dependencias de Node
+node_modules/
+
+# Archivos de build (producción)
+build/
+
+# Archivos del sistema operativo (macOS)
+.DS_Store
+
+# Archivos de entorno (si los tuvieras)
+.env

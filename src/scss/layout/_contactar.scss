@@ -1,0 +1,37 @@
+.no-webp .imagen-contacto {
+    background-image: url('../../img/contacto.jpg');
+}
+
+// 1. CORRECCIÓN (Typo): Era .web, debe ser .webp
+.webp .imagen-contacto {
+    background-image: url('../../img/contacto.webp');
+}
+
+
+.imagen-contacto {
+    background-size: cover;
+    background-position: center;
+    padding: $separacion 0;
+    
+    // 2. CORRECCIÓN: Se eliminó 'height: 100%;'
+    // Deja que el 'padding' defina la altura del banner.
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // 3. AÑADIDO: Centra el texto del párrafo
+    text-align: center;
+
+    h2 {
+        color: white;
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+
+    // 4. AÑADIDO: Estilos para el párrafo
+    p {
+        color: white;
+        font-size: 1.8rem; // O el tamaño que prefieras
+    }
+}
