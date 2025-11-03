@@ -14,7 +14,7 @@ const clean = require('gulp-clean');
 const webp = require('gulp-webp');
 
 const paths = {
-    scss: 'src/scss/**/*.scss',
+    scss: 'src/scss/app.scss',
     js: 'src/js/**/*.js',
     imagenes: 'src/img/**/*'
 }
@@ -55,7 +55,7 @@ function versionWebp() {
 
 
 function watchArchivos() {
-    watch(paths.scss, css);
+    watch('src/scss/**/*.scss', css);
     watch(paths.js, javascript);
     watch(paths.imagenes, imagenes);
     watch(paths.imagenes, versionWebp);

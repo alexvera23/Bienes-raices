@@ -1,6 +1,7 @@
 .barra{
     display: flex;
     flex-direction: column;
+    align-items: center;
     @include tablet{
         flex-direction: row;
         justify-content: space-between;
@@ -8,7 +9,7 @@
 }
 
 .navegacion{
-    margin-top: 20px;
+    display: none;
     @include tablet{
         display: flex;
         align-items: center;
@@ -31,4 +32,20 @@
             }
         }
     }
+}
+
+
+.mobile-menu{
+    @include tablet{
+        display: none;
+        
+    }
+
+    img{
+        width: 25px;
+    }
+}
+
+.mostrar{
+    display: block;
 }

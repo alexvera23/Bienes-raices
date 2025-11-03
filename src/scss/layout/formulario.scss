@@ -1,0 +1,77 @@
+.formulario {
+    // Asumiendo que $grisOscuro, $bold, y $gris están en tus variables
+    
+    fieldset {
+        border: none; // Quita los bordes feos del fieldset
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    legend {
+        font-size: 2.4rem;
+        font-weight: $bold;
+        color: $grisOscuro;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: $grisOscuro;
+        margin: 0 0 1.5rem 0;
+    }
+
+    /** La clave para el layout de lista **/
+    label {
+        display: block; // <-- Pone el label en su propia línea
+        font-weight: $bold;
+        text-transform: uppercase;
+        margin-bottom: .5rem; // Espacio entre label e input
+    }
+
+    // Estilo unificado para todos los campos de entrada
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+        width: 100%; // <-- Hace que todos ocupen el ancho completo
+        padding: 1rem;
+        border: 1px solid $gris;
+        border-radius: .5rem;
+        margin-bottom: 1.5rem; // Espacio entre cada campo
+        box-sizing: border-box; // Para que el padding no afecte el ancho
+    }
+
+    // Estilos especiales para los Radio Buttons
+    .forma-contacto {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+
+        input[type="radio"] {
+            width: auto; // Los radios no deben ocupar el 100%
+            margin: 0;
+        }
+
+        label {
+            margin: 0; // Quita el margen de los labels de radio
+            text-transform: none; // Quita mayúsculas
+            font-weight: normal;
+        }
+    }
+
+    // Espaciado para el botón de enviar
+    .boton-verde {
+        margin-top: 1rem;
+        width: 100%; // En móvil ocupa todo el ancho
+
+        // En pantallas más grandes, vuelve a la normalidad
+        @media (min-width: 768px) { 
+            width: auto;
+        }
+    }
+}
